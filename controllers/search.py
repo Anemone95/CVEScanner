@@ -23,9 +23,12 @@ def fetch(name, version):
     res = requests.get(burp0_url, headers=burp0_headers)
     html_selector = etree.HTML(res.text)
     num = int(html_selector.xpath('//strong[contains(@data-testid,"records-count")]/text()')[0])
+
     if num == 0:
         return []
 
+    vulns=html_selector.xpath('//tr[contains(@data-testid,"vuln-row")]/th/strong/a')
+    print(vulns.xpath(""))
     return [{}]
 
 
