@@ -2,3 +2,4 @@ tests/*
 *.pyc
 .idea/*
 venv/*
+database/nvdcve-*.json

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+TOOL_DIR="$( cd "$( dirname "$0"  )" && pwd  )"
+python $TOOL_DIR/mt_console.py $@

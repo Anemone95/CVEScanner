@@ -1,0 +1,8 @@
+# comment
+venv
+.git
+.github
+.idea
+.exvim.*
+tests
+database
