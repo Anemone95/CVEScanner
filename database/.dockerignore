@@ -4,6 +4,5 @@ venv
 .github
 .idea
 .exvim.*
-tests
-database
-!./database/mongodb.tar.gz
+*.json
+*.tar.gz

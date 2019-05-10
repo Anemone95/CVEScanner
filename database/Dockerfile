@@ -28,16 +28,14 @@ RUN apk add --update \
     libxslt-dev \
   && rm -rf /var/cache/apk/*
 
-ADD ./database/mongodb.tar.gz /mongodb/
 # 复制项目，将项目文件复制到docker中
-COPY . /CVEScanner
 ENV PATH="/CVScanner:${PATH}"
 
 # 安装项目的依赖
 WORKDIR /CVEScanner
-RUN pip3 install -r requirements.txt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com --no-cache-dir
+RUN pip3 install pymongo pathlib -i http://pypi.douban.com/simple --trusted-host pypi.douban.com --no-cache-dir
 
 # 提供启动命令，用户输入的命令会接在ENTRYPOINT命令后面
 WORKDIR /workspace
-# docker run --name "test" -i -v /mnt/d/Store/document/all_my_work/CZY/CVEScanner/tests:/workspace anemone/cvescanner "start -F java-sec-code-1.0.0.war --mongodb=192.168.70.1:27017"
-# ENTRYPOINT ["sh", "/CVEScanner/mt_cvescanner"]
+# docker run --name "tmp" -i -v /mnt/d/Store/document/all_my_work/CZY/CVEScanner/database:/workspace anemone/cvescanner
+CMD ["python3", "create_database.py"]

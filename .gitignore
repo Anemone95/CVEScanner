@@ -3,3 +3,4 @@ tests/*
 .idea/*
 venv/*
 database/nvdcve-*.json
+database/*.tar.gz
