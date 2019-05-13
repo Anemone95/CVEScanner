@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 TOOL_DIR="$( cd "$( dirname "$0"  )" && pwd  )"
-mongod --dbpath /mongodb/mongodb &
+# mongod --dbpath /mongodb/mongodb > /mongodb/mongodb.log 2 > /mongodb/mongodb.err &
+mongod --dbpath /mongodb/mongodb > /mongodb/mongodb.log &
 for i in 1 2 3 4 5 6 7 8 9 10;
 do
     curl --connect-timeout 1 localhost:27017 > /dev/null 2>/dev/null
@@ -10,5 +11,5 @@ do
     sleep 1
 done
 
-python $TOOL_DIR/mt_console.py $@
+python3 $TOOL_DIR/mt_console.py $@
 # killall mongod

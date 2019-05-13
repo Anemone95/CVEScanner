@@ -1,8 +1,9 @@
-# Docker构建镜像
+# Docker
+## 构建镜像
 
 1. 下载最新数据到database目录下，下载地址：https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
 
-2. 如果没有数据库生成docker，需要先构建数据库生成docker
+2. 如果没有数据库生成docker，需要先构建数据库生成docker，否则跳第3步
 
    ```bash
    $ cd database
@@ -25,4 +26,12 @@
    $ docker build . -t anemone/cvescanner
    ```
 
-   
+
+## 容器使用
+
+挂载被扫描包所在目录，并执行start命令：
+
+```bash
+docker run --name "test" -i -v /mnt/d/Store/document/all_my_work/CZY/CVEScanner/tests:/workspace anemone/cvescanner "start -F java-sec-code-1.0.0.war"
+```
+

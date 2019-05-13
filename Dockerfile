@@ -40,4 +40,4 @@ RUN pip3 install -r requirements.txt -i http://pypi.douban.com/simple --trusted-
 # 提供启动命令，用户输入的命令会接在ENTRYPOINT命令后面
 WORKDIR /workspace
 # docker run --name "test" -i -v /mnt/d/Store/document/all_my_work/CZY/CVEScanner/tests:/workspace anemone/cvescanner "start -F java-sec-code-1.0.0.war --mongodb=192.168.70.1:27017"
-# ENTRYPOINT ["sh", "/CVEScanner/mt_cvescanner"]
+ENTRYPOINT ["sh", "/CVEScanner/mt_cvescanner"]

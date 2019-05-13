@@ -114,7 +114,7 @@ def _format(cve):
                 solution="",
                 source='cve',
                 extra={"category": "Third party libraries",
-                       "referenceUrl": cve["reference_data"],
+                       "referenceUrl": cve["references"]["reference_data"],
                       },
                 )
 

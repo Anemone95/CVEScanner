@@ -28,9 +28,6 @@ RUN apk add --update \
     libxslt-dev \
   && rm -rf /var/cache/apk/*
 
-# 复制项目，将项目文件复制到docker中
-ENV PATH="/CVScanner:${PATH}"
-
 # 安装项目的依赖
 WORKDIR /CVEScanner
 RUN pip3 install pymongo pathlib -i http://pypi.douban.com/simple --trusted-host pypi.douban.com --no-cache-dir
