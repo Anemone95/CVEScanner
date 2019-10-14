@@ -1,4 +1,7 @@
-# Docker
+# 简介
+CVEScanner是一扫描项目中使用不安全组件的工具，其首先收集nvd数据库中的CVE，接着给定项目（jar/war包），其会通过版本匹配的方式发现其是否含有存在漏洞的第三方组件。
+
+# 安装(Docker)
 ## 构建镜像
 
 1. 下载最新数据到database目录下，下载地址：https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
